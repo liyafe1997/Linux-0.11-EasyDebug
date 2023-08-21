@@ -1,7 +1,16 @@
-Linux-0.11
+Linux-0.11-EasyDebug
 ==========
 
 The old Linux kernel source ver 0.11 which has been tested under modern Linux,  Mac OSX and Windows.
+
+Forked from https://github.com/yuan-xy/Linux-0.11
+
+## What did I do in this repo (Compare to the original [Linux-0.11](https://github.com/yuan-xy/Linux-0.11) )
+1. Improve and fix bugs in Makefile.
+2. Add tasks.json and launch.json for VSCode for easier debugging. Now you can just open this repository in VSCode and click Debug. (Of cause you have to make sure the toolchain is installed)
+
+![VSCodeScreenshotImg](https://github.com/liyafe1997/Linux-0.11-EasyDebug/assets/18359157/7c0cf92d-4650-4fdb-88fb-e1443fe012a0)
+
 
 ## 1. Build on Linux
 
