@@ -1,0 +1,16 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "name": "GDB with QEMU",
+        "type": "cppdbg",
+        "request": "launch",
+        "program": "${workspaceFolder}/tools/system",
+        "cwd": "${workspaceFolder}",
+        "MIMode": "gdb",
+        "miDebuggerServerAddress": ":1234",
+        "preLaunchTask": "debug-daemonize"
+    }
+    ]
+  }
+  
