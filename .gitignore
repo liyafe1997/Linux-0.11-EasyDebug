@@ -9,3 +9,4 @@ boot/bootsect
 boot/setup
 System.map
 Image
+kernel/chr_drv/keyboard.s
