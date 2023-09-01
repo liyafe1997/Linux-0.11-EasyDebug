@@ -9,8 +9,20 @@
         "cwd": "${workspaceFolder}",
         "MIMode": "gdb",
         "miDebuggerServerAddress": ":1234",
-        "preLaunchTask": "debug-daemonize"
-    }
+        "preLaunchTask": "debug-daemonize",
+        "stopAtEntry": false
+    },
+    {
+      "name": "GDB with bochs",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${workspaceFolder}/tools/system",
+      "cwd": "${workspaceFolder}",
+      "MIMode": "gdb",
+      "miDebuggerServerAddress": ":1234",
+      // "preLaunchTask": "debug-bochs",
+      "stopAtEntry": false
+  },
     ]
   }
   

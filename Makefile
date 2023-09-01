@@ -8,7 +8,7 @@ CALLTREE=$(shell find tools/ -name "calltree" -perm 755 -type f)
 
 # indicate the path of the bochs
 #BOCHS=$(shell find tools/ -name "bochs" -perm 755 -type f)
-BOCHS=bochs
+BOCHS=tools/bochs/bochs-2.3.7/bin/bin/bochs
 
 #
 # if you want the ram-disk device, define this to be the
@@ -136,6 +136,9 @@ cscope:
 
 start: all
 	@qemu-system-i386 -m 16M -boot a -fda Image -hda $(HDA_IMG)
+
+vnc: all
+	@qemu-system-i386 -m 16M -boot a -fda Image -hda $(HDA_IMG) -vnc :10
 
 debug: all
 	@echo $(OS)
