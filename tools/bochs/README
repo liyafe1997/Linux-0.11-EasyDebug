@@ -5,8 +5,11 @@ it.
 
 1. compile me with gdbstub support:
 
-$ cd bochs-2.3.7
-$ ./configure --enable-plugins --enable-disasm --enable-gdb-stub 
+$ cd bochs-2.7$
+$ mkdir bin
+$ ./configure --enable-debugger --enable-plugins --enable-disasm --prefix=$(realpath ./bin)
+$ make -j8
+$ make install
 
 2. start kernel in bochs
 

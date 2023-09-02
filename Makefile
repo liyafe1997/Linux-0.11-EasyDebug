@@ -8,7 +8,7 @@ CALLTREE=$(shell find tools/ -name "calltree" -perm 755 -type f)
 
 # indicate the path of the bochs
 #BOCHS=$(shell find tools/ -name "bochs" -perm 755 -type f)
-BOCHS=tools/bochs/bochs-2.3.7/bin/bin/bochs
+BOCHS=~/bochs-2.7/bin/bin/bochs
 
 #
 # if you want the ram-disk device, define this to be the
@@ -148,18 +148,11 @@ debug-daemonize: all
 	@echo $(OS)
 	@qemu-system-i386 -m 16M -boot a -fda Image -hda $(HDA_IMG) -s -S -daemonize
 
-bochs-debug:
+bochs-debug: all
 	@$(BOCHS) -q -f tools/bochs/bochsrc/bochsrc-hd-dbg.bxrc	
 
-bochs:
-ifeq ($(BOCHS),)
-	@(cd tools/bochs/bochs-2.3.7; \
-	./configure --enable-plugins --enable-disasm --enable-gdb-stub;\
-	make)
-endif
-
-bochs-clean:
-	@make clean -C tools/bochs/bochs-2.3.7
+bochs-start: all
+	@$(BOCHS) -q -f tools/bochs/bochsrc/bochsrc-hd.bxrc	
 
 calltree:
 ifeq ($(CALLTREE),)
