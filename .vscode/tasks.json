@@ -20,6 +20,7 @@
       "label": "debug-bochs",
       "type": "shell",
       "command": "make",
+      "isBackground": true,
       "args": [
         "bochs-debug"
       ],

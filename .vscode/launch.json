@@ -20,7 +20,7 @@
       "cwd": "${workspaceFolder}",
       "MIMode": "gdb",
       "miDebuggerServerAddress": ":1234",
-      // "preLaunchTask": "debug-bochs",
+      "preLaunchTask": "debug-bochs",
       "stopAtEntry": false
   },
     ]
