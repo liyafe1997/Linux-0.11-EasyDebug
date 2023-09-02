@@ -10,3 +10,4 @@ boot/setup
 System.map
 Image
 kernel/chr_drv/keyboard.s
+tools/bochs/bochs-*
