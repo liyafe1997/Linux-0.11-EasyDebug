@@ -169,7 +169,11 @@ brew install nativeos/i386-elf-toolchain/i386-elf-gcc
 brew install qemu
 brew install gdb
 ```
+Add the following environment variable to your `~/.bash_profile` or `~/.zshrc`
 
+```
+export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
+```
 
 ### 2.2. hack linux-0.11
 same as section 1.2
