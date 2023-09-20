@@ -10,7 +10,11 @@ Forked from https://github.com/yuan-xy/Linux-0.11
 2. Add tasks.json and launch.json for VSCode for easier debugging. Now you can just open this repository in VSCode and click Debug. (Of cause you have to make sure the toolchain is installed)
 3. Fix `bochsrc-hd.bxrc` to make it work on newer version of bochs.
 
+Linux (Windows with WSLg):
 ![VSCodeScreenshotImg](https://github.com/liyafe1997/Linux-0.11-EasyDebug/assets/18359157/7c0cf92d-4650-4fdb-88fb-e1443fe012a0)
+
+macOS:
+![macOS_VSCode_debug](https://github.com/liyafe1997/Linux-0.11-EasyDebug/assets/18359157/2ec5caa6-b329-478a-8b2e-950a6e8b68d4)
 
 ## Build bochs and configurate it for debugging
 gdb & VSCode is work not very well with bochs, so I recommend you to use QEMU for debugging with gdb and VSCode,
@@ -156,22 +160,16 @@ $ gdb tools/system
 
 * install cross compiler gcc and binutils
 * install qemu
-* install gdb. you need download the gdb source and compile it to use gdb because port doesn't provide i386-elf-gdb, or you can use the pre-compiled gdb in the tools directory.
-* a linux-0.11 hardware image file: hdc-0.11.img
+* install gdb.
 
-```bash
-$ sudo port install qemu
-$ sudo port install i386-elf-binutils i386-elf-gcc
+```
+brew tap nativeos/i386-elf-toolchain
+brew install nativeos/i386-elf-toolchain/i386-elf-binutils
+brew install nativeos/i386-elf-toolchain/i386-elf-gcc
+brew install qemu
+brew install gdb
 ```
 
-optional
-```bash
-$ wget ftp://ftp.gnu.org/gnu/gdb/gdb-7.4.tar.bz2
-$ tar -xzvf gdb-7.4.tar.bz2
-$ cd gdb-7.4
-$ ./configure --target=i386-elf
-$ make
-```
 
 ### 2.2. hack linux-0.11
 same as section 1.2
